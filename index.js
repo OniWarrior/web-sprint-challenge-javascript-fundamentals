@@ -82,9 +82,11 @@ animalNames(zooAnimals);
   For example: ['jackal, asiatic', .....]
   */
 
-  function lowerCaseNames(/*Your Code Here*/){
-    /*Your Code Here*/
+  function lowerCaseNames(animals){
+    return animals.map(match => match.animal_name.toLowerCase());
   }
+
+  lowerCaseNames(zooAnimals);
   
   
   /* 🦁🦁🦁 Request 3: .filter() 🦁🦁🦁
@@ -92,10 +94,11 @@ animalNames(zooAnimals);
   Using lowPopulationAnimals use .filter() to create a new array of objects which contains only the animals with a population of less than 5.
   */
 
-  function lowPopulationAnimals(/*Your Code Here*/){
-    /*Your Code Here*/
+  function lowPopulationAnimals(animals){
+    return animals.filter(match => match.population < 5);
   }
   
+  lowPopulationAnimals(zooAnimals);
 
   /* 🦁🦁🦁 Request 4: .reduce() 🦁🦁🦁
   The zoo needs to know their total animal population across the United States. 
