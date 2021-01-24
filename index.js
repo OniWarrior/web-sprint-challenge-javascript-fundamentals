@@ -2,6 +2,9 @@
 /* 🚀🚀🚀🤓 Task 1: 🤓🚀🚀🚀 
 Study the code below and explain in your own words why nested function can access the variable internal. */
 
+// This situation is exactly what closure is about. A function has references to all of the data that resides outside of 
+// the function. This is the reason why it can interact with "internal"; it's because nestedFunction has a reference to that variable.
+
 const external = "I'm outside the function";
 
 function myFunction() {
@@ -17,7 +20,8 @@ myFunction();
 
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀: 
 
-
+// This situation is exactly what closure is about. A function has references to all of the data that resides outside of 
+// the function. This is the reason why it can interact with "internal"; it's because nestedFunction has a reference to that variable.
 
 
 
@@ -28,11 +32,15 @@ myFunction();
     
 For example, `summation(4)` should return 10 because 1+2+3+4 is 10. Note, you may use a for loop for this function if you wish */
 
-function summation(/*Your Code Here*/) {
-  /*Your Code Here*/
-
+function summation(value) {
+      let counter = 0;
+      for(let i = 1;i <= value;i++)
+      {
+        counter += i;
+      }
+      return counter;
   }
- 
+  summation(4);
 
 // 🦁🦁🦁 Topic 2: ADVANCED Array Methods 🦁🦁🦁
 // Given this zoo data from around the United States, follow the instructions below. Use the specific array methods in the requests below to solve the problems.
@@ -56,9 +64,16 @@ const zooAnimals = [
   displayNames will be an array of strings, and each string should follow this pattern: "name: {name}, scientific: {scientific name}"
   */
 
-  function animalNames(/*Your Code Here*/){
-    /*Your Code Here*/
-  }
+ function animalNames(animals){
+  const displayNames = [];
+  
+ animals.forEach(element => {
+   displayNames.push(`name: ${element.animal_name}, scientific: ${element.scientific_name}`);  
+ });
+ return displayNames;
+}
+
+animalNames(zooAnimals);
   
 
   /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
